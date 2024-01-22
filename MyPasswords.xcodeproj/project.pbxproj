@@ -26,6 +26,7 @@
 		F2D8586D2B5B28E500282F38 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D8586C2B5B28E500282F38 /* HeaderTableViewCell.swift */; };
 		F2D8586F2B5B2A2300282F38 /* GeneralProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D8586E2B5B2A2300282F38 /* GeneralProtocols.swift */; };
 		F2D858712B5B304200282F38 /* TitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D858702B5B304200282F38 /* TitleViewCell.swift */; };
+		F2DFD6B12B5EC6E20048BC41 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DFD6B02B5EC6E20048BC41 /* Constants.swift */; };
 		F2F644412B5C17260053F0A0 /* MyPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F6443B2B5C17260053F0A0 /* MyPasswordPresenter.swift */; };
 		F2F644422B5C17260053F0A0 /* MyPasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F6443C2B5C17260053F0A0 /* MyPasswordRouter.swift */; };
 		F2F644432B5C17260053F0A0 /* MyPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F6443D2B5C17260053F0A0 /* MyPasswordInteractor.swift */; };
@@ -60,6 +61,7 @@
 		F2D8586C2B5B28E500282F38 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		F2D8586E2B5B2A2300282F38 /* GeneralProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralProtocols.swift; sourceTree = "<group>"; };
 		F2D858702B5B304200282F38 /* TitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewCell.swift; sourceTree = "<group>"; };
+		F2DFD6B02B5EC6E20048BC41 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F2F6443B2B5C17260053F0A0 /* MyPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPasswordPresenter.swift; sourceTree = "<group>"; };
 		F2F6443C2B5C17260053F0A0 /* MyPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPasswordRouter.swift; sourceTree = "<group>"; };
 		F2F6443D2B5C17260053F0A0 /* MyPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPasswordInteractor.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				F2D8584E2B5B223400282F38 /* AppDelegate.swift */,
+				F2DFD6AF2B5EC6D00048BC41 /* Constants */,
 				F297BA272B5DD7550098753B /* Manager */,
 				F297BA172B5DAF730098753B /* Utils */,
 				F2D858652B5B245D00282F38 /* Features */,
@@ -192,6 +195,14 @@
 				F2D858702B5B304200282F38 /* TitleViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		F2DFD6AF2B5EC6D00048BC41 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				F2DFD6B02B5EC6E20048BC41 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		F2F644392B5C16EF0053F0A0 /* MyPassword */ = {
@@ -353,6 +364,7 @@
 				F297BA262B5DCF3A0098753B /* AddPasswordVC.swift in Sources */,
 				F2D858672B5B259B00282F38 /* ListPasswordEntity.swift in Sources */,
 				F2F644452B5C17260053F0A0 /* MyPasswordVC.swift in Sources */,
+				F2DFD6B12B5EC6E20048BC41 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

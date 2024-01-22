@@ -11,6 +11,9 @@ class ListPasswordPresenter {
     var router: ListPasswordRouterProtocol?
 }
 extension ListPasswordPresenter: ListPasswordPresenterProtocol {
+    func tapAddPassword() {
+        router?.showAddPassword()
+    }
     func tapPassword(data: ListPasswordEntity) {
         router?.showPassword(data: data)
     }

@@ -26,4 +26,8 @@ extension ListPasswordRouter: ListPasswordRouterProtocol {
         let myPassword = MyPasswordRouter(data: data)
         self.view.navigationController?.pushViewController(myPassword.view, animated: true)
     }
+    func showAddPassword() {
+        let addPassword = AddPasswordRouter()
+        self.view.navigationController?.pushViewController(addPassword.view, animated: true)
+    }
 }

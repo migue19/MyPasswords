@@ -11,6 +11,7 @@ import Foundation
 protocol ListPasswordPresenterProtocol {
     func requestData()
     func tapPassword(data: ListPasswordEntity)
+    func tapAddPassword()
 }
 /// Protocolo que define los métodos y atributos para el Interactor de MyPassword
 /// PRESENTER -> INTERACTOR
@@ -31,4 +32,5 @@ protocol ListPasswordViewProtocol {
 /// PRESENTER -> ROUTING
 protocol ListPasswordRouterProtocol {
     func showPassword(data: ListPasswordEntity)
+    func showAddPassword()
 }

@@ -19,12 +19,18 @@ class ListPasswordVC: UIViewController {
     var passwords: [ListPasswordEntity] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         setupView()
         getData()
     }
     func getData() {
         presenter?.requestData()
+    }
+    func setupNavigation() {
+        let addButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addPassword))
+        navigationItem.rightBarButtonItem = addButton
+    }
+    @objc func addPassword() {
+        presenter?.tapAddPassword()
     }
 }
 extension ListPasswordVC: GeneralView {
@@ -32,12 +38,13 @@ extension ListPasswordVC: GeneralView {
         self.view.backgroundColor = .white
         addSubviews()
         setupConstraints()
+        setupNavigation()
     }
     func addSubviews() {
         self.view.addSubview(tableView)
     }
     func setupConstraints() {
-        tableView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
         tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true

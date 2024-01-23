@@ -6,6 +6,6 @@ target 'MyPasswords' do
   use_frameworks!
 
   # Pods for MyPasswords
-  pod 'NutUtils', :path => '/Users/miguelmexicanoherrera/Documents/NutSystems/Frameworks/NutUtils'
+  pod 'NutUtils', :path => '../NutUtils'
   pod 'Toast-Swift'
 end

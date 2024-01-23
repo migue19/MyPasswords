@@ -19,6 +19,11 @@ class AddPasswordVC: UIViewController {
         super.viewDidLoad()
     }
     @IBAction func addPassword(_ sender: Any) {
+        let name = nameTxt.text ?? ""
+        let user = userTxt.text ?? ""
+        let password = passwordTxt.text ?? ""
+        let data = ListPasswordEntity(name: name, user: user, password: password)
+        CoreDataManager.shared.savePassword(password: data)
     }
 }
 /// Protocolo para recibir datos del presenter.

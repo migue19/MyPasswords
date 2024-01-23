@@ -8,6 +8,7 @@
 import Foundation
 struct Constants {
     static let dbName = "MyPasswords"
+    static let passwordEntity = "Password"
     static let name = "name"
     static let user = "user"
     static let password = "password"

@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 class CoreDataManager {
     var context: NSManagedObjectContext!
-    private static var shared: CoreDataManager = {
+    static var shared: CoreDataManager = {
         let manager = CoreDataManager()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         manager.context = appDelegate.persistentContainer.viewContext
@@ -32,5 +32,29 @@ class CoreDataManager {
             print("Error al obtener los datos")
             return []
         }
+    }
+    func savePassword(password: ListPasswordEntity) {
+        guard let managedObject = getManagedObject() else {
+            return
+        }
+        managedObject.setValue(password.name, forKey: Constants.name)
+        managedObject.setValue(password.user, forKey: Constants.user)
+        managedObject.setValue(password.password, forKey: Constants.password)
+        saveContext()
+    }
+    func saveContext() {
+        do {
+            try context.save()
+        } catch {
+            print("Error al guardar")
+        }
+    }
+    func getManagedObject() -> NSManagedObject? {
+        guard let entity = NSEntityDescription.entity(forEntityName: Constants.passwordEntity, in: context) else {
+            print("No existe la Entidad: \(Constants.passwordEntity)")
+            return nil
+        }
+        let managedObject = NSManagedObject(entity: entity, insertInto: context)
+        return managedObject
     }
 }

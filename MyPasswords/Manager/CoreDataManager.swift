@@ -8,23 +8,27 @@
 import UIKit
 import CoreData
 class CoreDataManager {
-    var context: NSManagedObjectContext!
+    var context: NSManagedObjectContext?
     static var shared: CoreDataManager = {
-        let manager = CoreDataManager()
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        manager.context = appDelegate.persistentContainer.viewContext
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let manager = CoreDataManager(context: appDelegate?.persistentContainer.viewContext)
         return manager
     }()
+    init(context: NSManagedObjectContext?) {
+        self.context = context
+    }
     func fetchData() -> [ListPasswordEntity] {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.dbName)
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.passwordEntity)
         request.returnsObjectsAsFaults = false
         var passwords: [ListPasswordEntity] = []
         do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-                let name: String = data.value(forKey: Constants.name) as! String
-                let user: String = data.value(forKey: Constants.user) as! String
-                let password: String = data.value(forKey: Constants.password) as! String
+            guard let result = try context?.fetch(request) as? [NSManagedObject] else {
+                return []
+            }
+            for data in result  {
+                let name: String = data.value(forKey: Constants.name) as? String ?? ""
+                let user: String = data.value(forKey: Constants.user) as? String ?? ""
+                let password: String = data.value(forKey: Constants.password) as? String ?? ""
                 passwords.append(ListPasswordEntity(name: name, user: user, password: password))
             }
             return passwords
@@ -44,13 +48,13 @@ class CoreDataManager {
     }
     func saveContext() {
         do {
-            try context.save()
+            try context?.save()
         } catch {
             print("Error al guardar")
         }
     }
     func getManagedObject() -> NSManagedObject? {
-        guard let entity = NSEntityDescription.entity(forEntityName: Constants.passwordEntity, in: context) else {
+        guard let context = context, let entity = NSEntityDescription.entity(forEntityName: Constants.passwordEntity, in: context) else {
             print("No existe la Entidad: \(Constants.passwordEntity)")
             return nil
         }

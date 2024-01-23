@@ -3,7 +3,7 @@ PODS:
   - Toast-Swift (5.1.0)
 
 DEPENDENCIES:
-  - NutUtils (from `../NutUtils`)
+  - NutUtils (from `/Users/miguelmexicanoherrera/Documents/NutSystems/Frameworks/NutUtils`)
   - Toast-Swift
 
 SPEC REPOS:
@@ -12,12 +12,12 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   NutUtils:
-    :path: "../NutUtils"
+    :path: "/Users/miguelmexicanoherrera/Documents/NutSystems/Frameworks/NutUtils"
 
 SPEC CHECKSUMS:
   NutUtils: f08b0d5d9ff7792d35fb98aa4a594aedba44f277
   Toast-Swift: dd369e68ee529f542c65bd0d0c6c50cd743cf6f2
 
-PODFILE CHECKSUM: c1cba5a45920738b95b6f17cebb97f0276b75c9b
+PODFILE CHECKSUM: ca86b91efe44b9f6c47e27383ace5eb502c9058a
 
 COCOAPODS: 1.14.2
